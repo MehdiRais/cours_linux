@@ -1,0 +1,562 @@
+[
+    {
+        "id": "10b012297c5f34ba",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "ea7d17e57ee1602e",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "529b109761f16f44",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "99033b4f610c9e7c",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#097479",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Temperature",
+            "hideToolbar": "true",
+            "allowSwipe": "true",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "21edce14bc56316b",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "b58e269dffe397da",
+        "type": "ui_group",
+        "name": "Température CPU",
+        "tab": "21edce14bc56316b",
+        "order": 1,
+        "disp": true,
+        "width": 9,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f38eba9dd69bee52",
+        "type": "ui_group",
+        "name": "Température Paris",
+        "tab": "21edce14bc56316b",
+        "order": 3,
+        "disp": true,
+        "width": 8,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "1ddf02cb767d6a81",
+        "type": "ui_group",
+        "name": "Projet Node-Red",
+        "tab": "21edce14bc56316b",
+        "order": 5,
+        "disp": true,
+        "width": "17",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c3a7d0b8d58b863b",
+        "type": "openweathermap",
+        "z": "10b012297c5f34ba",
+        "name": "Météo Paris",
+        "wtype": "current",
+        "lon": "",
+        "lat": "",
+        "city": "Paris",
+        "country": "France",
+        "language": "fr",
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "3a46e5c742e15f55"
+            ]
+        ]
+    },
+    {
+        "id": "58feea4223be1cd7",
+        "type": "inject",
+        "z": "10b012297c5f34ba",
+        "name": "temps",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": "3101",
+        "topic": "",
+        "payloadType": "str",
+        "x": 80,
+        "y": 140,
+        "wires": [
+            [
+                "c3a7d0b8d58b863b"
+            ]
+        ]
+    },
+    {
+        "id": "3a46e5c742e15f55",
+        "type": "function",
+        "z": "10b012297c5f34ba",
+        "name": "",
+        "func": "msg.topic = \"input\";\nmsg.payload = msg.payload.tempc;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 140,
+        "wires": [
+            [
+                "2d9c88ea9718df29"
+            ]
+        ]
+    },
+    {
+        "id": "2d9c88ea9718df29",
+        "type": "ui_chart",
+        "z": "10b012297c5f34ba",
+        "name": "",
+        "group": "f38eba9dd69bee52",
+        "order": 1,
+        "width": 8,
+        "height": 3,
+        "label": "Température (en fonction du temps)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "25",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 610,
+        "y": 140,
+        "wires": [
+            [
+                "7b2f146b15c2731d"
+            ]
+        ]
+    },
+    {
+        "id": "7b2f146b15c2731d",
+        "type": "debug",
+        "z": "10b012297c5f34ba",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 680,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "24b9195356f4185c",
+        "type": "exec",
+        "z": "ea7d17e57ee1602e",
+        "command": "vcgencmd measure_temp",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Raspberry Température",
+        "x": 270,
+        "y": 100,
+        "wires": [
+            [
+                "4a871a57dc3056d5"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "1e5c5962dd02517c",
+        "type": "inject",
+        "z": "ea7d17e57ee1602e",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "str",
+        "x": 90,
+        "y": 100,
+        "wires": [
+            [
+                "24b9195356f4185c"
+            ]
+        ]
+    },
+    {
+        "id": "4a871a57dc3056d5",
+        "type": "change",
+        "z": "ea7d17e57ee1602e",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "temp=",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "'C",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 480,
+        "y": 100,
+        "wires": [
+            [
+                "98f3a4f3c9b0fe97",
+                "c6a00be90a96c923"
+            ]
+        ]
+    },
+    {
+        "id": "98f3a4f3c9b0fe97",
+        "type": "ui_chart",
+        "z": "ea7d17e57ee1602e",
+        "name": "",
+        "group": "b58e269dffe397da",
+        "order": 2,
+        "width": 4,
+        "height": 3,
+        "label": "CPU Température (°C)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 720,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c6a00be90a96c923",
+        "type": "ui_gauge",
+        "z": "ea7d17e57ee1602e",
+        "name": "",
+        "group": "b58e269dffe397da",
+        "order": 1,
+        "width": 5,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Raspberry pi CPU temp",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "40",
+        "seg2": "45",
+        "className": "",
+        "x": 730,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "19cd2c93850669c6",
+        "type": "exec",
+        "z": "529b109761f16f44",
+        "command": "vcgencmd measure_temp",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "Raspberry Température",
+        "x": 290,
+        "y": 80,
+        "wires": [
+            [
+                "23b60b239b2f4977"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "4dd3f003c247f918",
+        "type": "inject",
+        "z": "529b109761f16f44",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payloadType": "str",
+        "x": 100,
+        "y": 80,
+        "wires": [
+            [
+                "19cd2c93850669c6"
+            ]
+        ]
+    },
+    {
+        "id": "23b60b239b2f4977",
+        "type": "change",
+        "z": "529b109761f16f44",
+        "name": "",
+        "rules": [
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "temp=",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            },
+            {
+                "t": "change",
+                "p": "payload",
+                "pt": "msg",
+                "from": "'C",
+                "fromt": "str",
+                "to": "",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 500,
+        "y": 80,
+        "wires": [
+            [
+                "de6f8bed72291984"
+            ]
+        ]
+    },
+    {
+        "id": "de6f8bed72291984",
+        "type": "ui_template",
+        "z": "529b109761f16f44",
+        "group": "1ddf02cb767d6a81",
+        "name": "",
+        "order": 1,
+        "width": 17,
+        "height": 3,
+        "format": "<p> Objectifs : </p>\n<p> - Afficher la température du CPU en fonction du temps. </p>\n<p> - Afficher la température de Paris en fonction du temps. </p>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 680,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    }
+]
