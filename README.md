@@ -1,6 +1,7 @@
 # cours_linux
 
 > projet_1 calculatrice 
+
 Pour entrer un calcul, il faut lancer le programme projet_1.sh à l'aide de la commande "bash project_1.sh".
 Pour qu'il soit bien lu par le programme il faut le saisir sous la forme var1 + var2.
 
