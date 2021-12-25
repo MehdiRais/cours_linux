@@ -3064,7 +3064,7 @@
         "id": "0336d39b18c36691",
         "type": "exec",
         "z": "08274c632cbc3289",
-        "command": "cd ~; python3 test.py",
+        "command": "cd ~; python3 image_process.py",
         "addpay": "payload",
         "append": "",
         "useSpawn": "false",
@@ -3072,7 +3072,7 @@
         "winHide": false,
         "oldrc": false,
         "name": "",
-        "x": 1040,
+        "x": 1080,
         "y": 580,
         "wires": [
             [
