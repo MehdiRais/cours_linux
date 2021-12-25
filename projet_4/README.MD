@@ -17,7 +17,7 @@ Nous souscrivons tous les 2 au broker de la raspberry de Romain. J'envoie (et j'
 > Description LEDs
 
 A partir du dashboard (voir figure 2), nous pouvons allumer ou éteindre n'importe laquelle des 64 LEDs grâce à des switchs. 
-Nous pouvons aussi eteindre toutes les Leds à l'aide du bouton "LED REINITIALISATION"
+Nous pouvons aussi éteindre toutes les Leds à l'aide du bouton "LED REINITIALISATION"
 La fonctionnalité la plus intéressante est l'affichage d'image sur l'ecran LEDs.
 Pour cela, il suffit d'entrer l'URL d'une image pour qu'elle s'affiche sur la matrice de LEDs. Le script image_process.py diminue la résolution à 8x8 pixels puis l'affiche. On peut utiliser par exemple les liens suivants : 
 - https://miro.medium.com/max/500/1*_GiJ07I23vpVoYEmSj9oOw.png
