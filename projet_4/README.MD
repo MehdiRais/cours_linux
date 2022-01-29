@@ -2,6 +2,7 @@
 > VO PHUOC Romain 
 
 L'objectif de ce projet était d'utiliser le protocole MQTT (grâce au broker mosquitto) afin d'envoyer et de recevoir des données tirées des capteurs du Sense-Hat.
+Les données sont ensuite affichées sur un dashboard.
 
 > Installation des fichiers requis 
 
